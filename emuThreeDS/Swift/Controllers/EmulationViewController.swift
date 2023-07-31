@@ -214,7 +214,7 @@ class EmulationViewController : UIViewController, PerformanceStatisticsDelegate 
         
         
         // MARK: LZLRZR
-        lButton = button(with: UIImage(systemName: "l.button.roundedbottom.horizontal.fill", withConfiguration: largeSymbolConfiguration))
+        lButton = button(with: UIImage(systemName: isLatestOS() ? "l.button.roundedbottom.horizontal.fill" : "l.rectangle.roundedbottom.fill", withConfiguration: largeSymbolConfiguration))
         lButton.translatesAutoresizingMaskIntoConstraints = false
         lButton.addAction(UIAction(handler: { action in EmulationInput.buttonL.pressChangedHandler(nil, value: 1, pressed: true) }), for: .touchDown)
         lButton.addAction(UIAction(handler: { action in EmulationInput.buttonL.pressChangedHandler(nil, value: 0, pressed: false) }), for: .touchUpInside)
@@ -226,7 +226,7 @@ class EmulationViewController : UIViewController, PerformanceStatisticsDelegate 
             lButton.leadingAnchor.constraint(equalTo: dpadLButton.leadingAnchor)
         ])
         
-        zlButton = button(with: UIImage(systemName: "zl.button.roundedtop.horizontal.fill", withConfiguration: largeSymbolConfiguration))
+        zlButton = button(with: UIImage(systemName: isLatestOS() ? "zl.button.roundedtop.horizontal.fill" : "zl.rectangle.roundedtop.fill", withConfiguration: largeSymbolConfiguration))
         zlButton.translatesAutoresizingMaskIntoConstraints = false
         zlButton.addAction(UIAction(handler: { action in EmulationInput.buttonZL.pressChangedHandler(nil, value: 1, pressed: true) }), for: .touchDown)
         zlButton.addAction(UIAction(handler: { action in EmulationInput.buttonZL.pressChangedHandler(nil, value: 0, pressed: false) }), for: .touchUpInside)
@@ -238,7 +238,7 @@ class EmulationViewController : UIViewController, PerformanceStatisticsDelegate 
             zlButton.leadingAnchor.constraint(equalTo: lButton.trailingAnchor, constant: 20)
         ])
         
-        rButton = button(with: UIImage(systemName: "r.button.roundedbottom.horizontal.fill", withConfiguration: largeSymbolConfiguration))
+        rButton = button(with: UIImage(systemName: isLatestOS() ? "r.button.roundedbottom.horizontal.fill" : "r.rectangle.roundedbottom.fill", withConfiguration: largeSymbolConfiguration))
         rButton.translatesAutoresizingMaskIntoConstraints = false
         rButton.addAction(UIAction(handler: { action in EmulationInput.buttonR.pressChangedHandler(nil, value: 1, pressed: true) }), for: .touchDown)
         rButton.addAction(UIAction(handler: { action in EmulationInput.buttonR.pressChangedHandler(nil, value: 0, pressed: false) }), for: .touchUpInside)
@@ -250,7 +250,7 @@ class EmulationViewController : UIViewController, PerformanceStatisticsDelegate 
             rButton.trailingAnchor.constraint(equalTo: aButton.trailingAnchor)
         ])
         
-        zrButton = button(with: UIImage(systemName: "zr.button.roundedtop.horizontal.fill", withConfiguration: largeSymbolConfiguration))
+        zrButton = button(with: UIImage(systemName: isLatestOS() ? "zr.button.roundedtop.horizontal.fill" : "zr.rectangle.roundedtop.fill", withConfiguration: largeSymbolConfiguration))
         zrButton.translatesAutoresizingMaskIntoConstraints = false
         zrButton.addAction(UIAction(handler: { action in EmulationInput.buttonZR.pressChangedHandler(nil, value: 1, pressed: true) }), for: .touchDown)
         zrButton.addAction(UIAction(handler: { action in EmulationInput.buttonZR.pressChangedHandler(nil, value: 0, pressed: false) }), for: .touchUpInside)
@@ -521,15 +521,13 @@ class EmulationViewController : UIViewController, PerformanceStatisticsDelegate 
                 }
             }
             
-            self.emulationSpeedLabel.attributedText = NSAttributedString(string: String(format: "%.0f%@", statistics.emulationSpeed * 100 + 0.5, "%"), attributes: [
+            let attributes: [NSAttributedString.Key : Any] = [
                 .font : UIFont.boldSystemFont(ofSize: UIFont.preferredFont(forTextStyle: .caption1).pointSize),
                 .foregroundColor : UIColor.systemGreen
-            ])
+            ]
             
-            self.gameFpsLabel.attributedText = NSAttributedString(string: String(format: "%.0f FPS", min(max(statistics.gameFps + 0.5, 0), 90)), attributes: [
-                .font : UIFont.boldSystemFont(ofSize: UIFont.preferredFont(forTextStyle: .caption1).pointSize),
-                .foregroundColor : UIColor.systemGreen
-            ])
+            self.emulationSpeedLabel.attributedText = NSAttributedString(string: String(format: "%.0f%@", statistics.emulationSpeed * 100 + 0.5, "%"), attributes: attributes)
+            self.gameFpsLabel.attributedText = NSAttributedString(string: String(format: "%.0f FPS", min(max(statistics.gameFps + 0.5, 0), 90)), attributes: attributes)
         }
     }
     
@@ -538,12 +536,11 @@ class EmulationViewController : UIViewController, PerformanceStatisticsDelegate 
     
     func button(with image: UIImage?, for configuration: UIImage.SymbolConfiguration? = nil) -> UIButton {
         if #available(iOS 15, *) {
+            var buttonConfiguration = UIButton.Configuration.borderless()
             if let configuration = configuration {
-                var buttonConfiguration = UIButton.Configuration.borderless()
                 buttonConfiguration.image = image?.applyingSymbolConfiguration(configuration)
                 return UIButton(configuration: buttonConfiguration)
             } else {
-                var buttonConfiguration = UIButton.Configuration.borderless()
                 buttonConfiguration.image = image
                 return UIButton(configuration: buttonConfiguration)
             }
@@ -551,6 +548,15 @@ class EmulationViewController : UIViewController, PerformanceStatisticsDelegate 
             let button = UIButton()
             button.setImage(image, for: .normal)
             return button
+        }
+    }
+    
+    
+    func isLatestOS() -> Bool {
+        if #available(iOS 17, *) {
+             return true
+        } else {
+            return false
         }
     }
 }

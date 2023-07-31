@@ -19,6 +19,13 @@ NS_ASSUME_NONNULL_BEGIN
 -(PerformanceStatistics *) initWithSystemFps:(double)systemFps gameFps:(double)gameFps frameTime:(double)frameTime emulationSpeed:(double)emulationSpeed;
 @end
 
+@interface SaveStateInfo : NSObject
+@property (nonatomic, assign) int slot;
+@property (nonatomic, assign) int time;
+
+-(SaveStateInfo *) initWithSlot:(int)slot time:(int)time;
+@end
+
 
 // MARK: PROTOCOLS BEGIN
 @protocol ImportingProgressDelegate <NSObject>
@@ -40,7 +47,6 @@ NS_ASSUME_NONNULL_BEGIN
     
     BOOL _isRunning, _isPaused;
 }
-
 
 -(CitraWrapper *) init;
 +(CitraWrapper *) sharedInstance NS_SWIFT_NAME(shared());
@@ -71,6 +77,11 @@ NS_ASSUME_NONNULL_BEGIN
 -(void) getCheats NS_SWIFT_NAME(getCheats());
 -(void) removeCheat:(NSInteger)index NS_SWIFT_NAME(removeCheat(index:));
 -(void) updateCheat:(NSInteger)index withPath:(NSString *)path NS_SWIFT_NAME(updateCheat(index:path:));
+
+
+-(NSArray <SaveStateInfo *> *) saveStates;
+-(void) loadState:(NSInteger)index;
+-(void) saveState;
 
 
 -(void) touchesBegan:(CGPoint)point NS_SWIFT_NAME(touchesBegan(point:));

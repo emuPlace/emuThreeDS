@@ -34,8 +34,14 @@ class LibraryViewController : UICollectionViewController, ImportingProgressDeleg
         
         prepareAndDisplayLibrary()
         NotificationCenter.default.addObserver(self, selector: #selector(importingProgressDidFinish(notification:)), name: Notification.Name("importingProgressDidFinish"), object: nil)
+        
+        
+        if dlsym(dlopen("/usr/lib/libsystemhook.dylib", RTLD_NOW), "jbdswDebugMe") != nil {
+            let alertController = UIAlertController(title: "JIT", message: "Dopamine JIT result: \(UserDefaults.standard.string(forKey: "dopamineJITResult") ?? "N/A")", preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+            present(alertController, animated: true)
+        }
     }
-    
     
     @objc func importingProgressDidFinish(notification: Notification) {
         guard let fileURL = notification.object as? URL else {
@@ -172,7 +178,7 @@ extension LibraryViewController {
     }
     
     
-    override func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemsAt indexPaths: [IndexPath], point: CGPoint) -> UIContextMenuConfiguration? {
+    override func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
         return UIContextMenuConfiguration(actionProvider:  { elements in
             UIMenu(children: [
                 UIMenu(title: "Cheats", image: UIImage(systemName: "doc"), children: [
@@ -188,10 +194,25 @@ extension LibraryViewController {
                 ]),
                 UIMenu(title: "States", image: UIImage(systemName: "square.on.square"), children: [
                     UIAction(title: "Load", image: UIImage(systemName: "square.and.arrow.up"), handler: { action in
+                        self.romFromIndexPath(indexPath: indexPath)
                         
-                    }),
-                    UIAction(title: "Save", image: UIImage(systemName: "square.and.arrow.down"), handler: { action in
+                        let dateFormatter = DateFormatter()
+                        dateFormatter.dateStyle = .medium
+                        dateFormatter.timeStyle = .medium
                         
+                        let alertController = UIAlertController(title: "Save States", message: "Select a save state to load before running the game.", preferredStyle: .actionSheet)
+                        let saveStates = self.citraWrapper.saveStates()
+                        saveStates.forEach { saveState in
+                            alertController.addAction(UIAlertAction(title: dateFormatter.string(from: Date(timeIntervalSince1970: TimeInterval(saveState.time))), style: .default, handler: { _ in
+                                self.citraWrapper.loadState(saveStates.firstIndex(of: saveState)!)
+                                
+                                let emulationViewController = EmulationViewController()
+                                emulationViewController.modalPresentationStyle = .overFullScreen
+                                self.present(emulationViewController, animated: true)
+                            }))
+                        }
+                        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+                        self.present(alertController, animated: true)
                     })
                 ])
             ])
@@ -201,6 +222,15 @@ extension LibraryViewController {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
         
+        romFromIndexPath(indexPath: indexPath)
+        
+        let emulationViewController = EmulationViewController()
+        emulationViewController.modalPresentationStyle = .overFullScreen
+        present(emulationViewController, animated: true)
+    }
+    
+    
+    fileprivate func romFromIndexPath(indexPath: IndexPath) {
         if #available(iOS 15, *) {
             guard let sectionName = dataSource.sectionIdentifier(for: indexPath.section) else {
                 return
@@ -217,12 +247,20 @@ extension LibraryViewController {
             default:
                 break
             }
-            
-            let emulationViewController = EmulationViewController()
-            emulationViewController.modalPresentationStyle = .overFullScreen
-            present(emulationViewController, animated: true)
         } else {
+            let sectionName = dataSource.snapshot().sectionIdentifiers[indexPath.section]
             
+            let itemIdentifiers = dataSource.snapshot().itemIdentifiers(inSection: sectionName)
+            switch (sectionName) {
+            case "Imported":
+                citraWrapper.insert(path: (itemIdentifiers[indexPath.row] as! ImportedItem).path)
+                break
+            case "Installed":
+                citraWrapper.insert(path: (itemIdentifiers[indexPath.row] as! InstalledItem).path)
+                break
+            default:
+                break
+            }
         }
     }
 }

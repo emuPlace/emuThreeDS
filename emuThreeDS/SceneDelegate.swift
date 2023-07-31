@@ -8,6 +8,21 @@
 import SwiftUI
 import UIKit
 
+// more could go here for a "releases" screen
+struct GitHubRelease : Codable, Comparable {
+    static func < (lhs: GitHubRelease, rhs: GitHubRelease) -> Bool {
+        return lhs.tag_name < rhs.tag_name
+    }
+    
+    static func > (lhs: GitHubRelease, rhs: GitHubRelease) -> Bool {
+        return lhs.tag_name > rhs.tag_name
+    }
+    
+    let tag_name: String
+}
+
+
+
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var citraWrapper = CitraWrapper.shared()
 
@@ -27,30 +42,50 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             return
         }
         
+        window.rootViewController = PlaceholderViewController()
         
-        let components = Calendar.current.dateComponents([.weekOfYear], from: Date())
-        print(components.weekOfYear)
-        if components.weekOfYear ?? 27 >= 28 {
-            window.rootViewController = UIHostingController(rootView: TrialOverView())
-        } else {
-            var configuration = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
-            configuration.headerMode = .supplementary
-            
-            let libraryViewController = LibraryViewController(collectionViewLayout: UICollectionViewCompositionalLayout.list(using: configuration))
-            let libraryNavigationController = UINavigationController(rootViewController: libraryViewController)
-            libraryViewController.tabBarItem = UITabBarItem(title: "Library", image: UIImage(systemName: "books.vertical.fill"), tag: 0)
-            
-            let settingsViewController = UIHostingController(rootView: SettingsView())
-            settingsViewController.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(systemName: "gearshape.fill"), tag: 1)
-            
-            let tabBarController = UITabBarController()
-            tabBarController.viewControllers = [libraryNavigationController, settingsViewController]
-            
-            window.rootViewController = tabBarController
+        Task {
+            if try await checkIfNewerVersionExists() {
+                BMACAuthenticate.shared.presentApplication(for: window)
+            } else {
+                if let email = UserDefaults.standard.string(forKey: "email") {
+                    if try await BMACAuthenticate.shared.validate(for: email) {
+                        BMACAuthenticate.shared.presentApplication(for: window)
+                    } else {
+                        window.rootViewController = AuthenticationViewController(.init(systemName: "lock.fill"), "Authenticate", "Authenticate with Buy Me A Coffee to proceed with testing.")
+                    }
+                } else {
+                    window.rootViewController = AuthenticationViewController(.init(systemName: "lock.fill"), "Authenticate", "Authenticate with Buy Me A Coffee to proceed with testing.")
+                }
+            }
         }
         
-        window.tintColor = .systemIndigo
+        window.tintColor = .systemOrange
         window.makeKeyAndVisible()
+    }
+    
+    
+    fileprivate func checkIfNewerVersionExists() async throws -> Bool {
+        guard let url = URL(string: "https://api.github.com/repos/emuplace/emuthreeds/releases") else {
+            return false
+        }
+        
+        var request = URLRequest(url: url)
+        request.setValue("application/vnd.github+json", forHTTPHeaderField: "Accept")
+        request.setValue("2022-11-28", forHTTPHeaderField: "X-GitHub-Api-Version")
+        
+        let (data, _) = try await URLSession.shared.data(from: url)
+        let decoded = try JSONDecoder().decode([GitHubRelease].self, from: data).sorted(by: >)
+        
+        let shortVersion = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
+        let buildVersion = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as! String
+        let version = "\(shortVersion).\(buildVersion)"
+        
+        guard let first = decoded.first else {
+            return false
+        }
+        
+        return first.tag_name > version
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

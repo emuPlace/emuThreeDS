@@ -365,33 +365,19 @@
 		C142466F2A3EDF9100CA0963 /* configuration.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C142466D2A3EDF9100CA0963 /* configuration.cpp */; };
 		C14246712A3EE4B400CA0963 /* EmulationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14246702A3EE4B400CA0963 /* EmulationViewController.swift */; };
 		C18717812A4440CC005141B1 /* libdynarmic.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1D349E52A41684E00001AB1 /* libdynarmic.xcframework */; };
-		C18717822A4440CC005141B1 /* libdynarmic.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C1D349E52A41684E00001AB1 /* libdynarmic.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C18717832A4440CC005141B1 /* libenet.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C12DE32C2A399EFC006FC1E0 /* libenet.xcframework */; };
-		C18717842A4440CC005141B1 /* libenet.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C12DE32C2A399EFC006FC1E0 /* libenet.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C18717852A4440CC005141B1 /* libfmt.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C12DE2412A399EFB006FC1E0 /* libfmt.xcframework */; };
-		C18717862A4440CC005141B1 /* libfmt.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C12DE2412A399EFB006FC1E0 /* libfmt.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C18717872A4440CC005141B1 /* libGenericCodeGen.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C151384D2A441F8200482904 /* libGenericCodeGen.xcframework */; };
-		C18717882A4440CC005141B1 /* libGenericCodeGen.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C151384D2A441F8200482904 /* libGenericCodeGen.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C18717892A4440CC005141B1 /* libglslang.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C151384C2A441F8100482904 /* libglslang.xcframework */; };
-		C187178A2A4440CC005141B1 /* libglslang.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C151384C2A441F8100482904 /* libglslang.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C187178B2A4440CC005141B1 /* libHLSL.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C151384E2A441F8300482904 /* libHLSL.xcframework */; };
-		C187178C2A4440CC005141B1 /* libHLSL.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C151384E2A441F8300482904 /* libHLSL.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C187178D2A4440CC005141B1 /* libMachineIndependent.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C151384A2A441F8000482904 /* libMachineIndependent.xcframework */; };
-		C187178E2A4440CC005141B1 /* libMachineIndependent.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C151384A2A441F8000482904 /* libMachineIndependent.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C187178F2A4440CC005141B1 /* libmcl.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C12DE3282A399EFC006FC1E0 /* libmcl.xcframework */; };
-		C18717902A4440CC005141B1 /* libmcl.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C12DE3282A399EFC006FC1E0 /* libmcl.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C18717912A4440CC005141B1 /* libOGLCompiler.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C15138562A44290700482904 /* libOGLCompiler.xcframework */; };
-		C18717922A4440CC005141B1 /* libOGLCompiler.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C15138562A44290700482904 /* libOGLCompiler.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C18717932A4440CC005141B1 /* libOSDependent.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C151384B2A441F8100482904 /* libOSDependent.xcframework */; };
-		C18717942A4440CC005141B1 /* libOSDependent.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C151384B2A441F8100482904 /* libOSDependent.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C18717952A4440CC005141B1 /* libsirit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C12D9E802A399EEA006FC1E0 /* libsirit.xcframework */; };
-		C18717962A4440CC005141B1 /* libsirit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C12D9E802A399EEA006FC1E0 /* libsirit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C18717972A4440CC005141B1 /* libSoundTouch.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C12DE32F2A399EFC006FC1E0 /* libSoundTouch.xcframework */; };
-		C18717982A4440CC005141B1 /* libSoundTouch.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C12DE32F2A399EFC006FC1E0 /* libSoundTouch.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C18717992A4440CC005141B1 /* libSPIRV.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C15138542A4427AF00482904 /* libSPIRV.xcframework */; };
-		C187179A2A4440CC005141B1 /* libSPIRV.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C15138542A4427AF00482904 /* libSPIRV.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C187179B2A4440CC005141B1 /* libteakra.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C12D9E872A399EEA006FC1E0 /* libteakra.xcframework */; };
-		C187179C2A4440CC005141B1 /* libteakra.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C12D9E872A399EEA006FC1E0 /* libteakra.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C187179E2A4440D3005141B1 /* libavcodec.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C12DE32B2A399EFC006FC1E0 /* libavcodec.framework */; };
 		C187179F2A4440D3005141B1 /* libavcodec.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C12DE32B2A399EFC006FC1E0 /* libavcodec.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C18717A02A4440D3005141B1 /* libavformat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C12D9E852A399EEA006FC1E0 /* libavformat.framework */; };
@@ -624,7 +610,11 @@
 		C1A2A5A92A446A3E00552477 /* libMoltenVK.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C1A2A5A82A446A3E00552477 /* libMoltenVK.dylib */; };
 		C1A2A5AA2A446AC000552477 /* libMoltenVK.dylib in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C1A2A5A82A446A3E00552477 /* libMoltenVK.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		C1B578522A42BF3000B93F1C /* MetalInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B578512A42BF3000B93F1C /* MetalInputView.swift */; };
-		C1B578572A42EDDF00B93F1C /* TrialOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B578562A42EDDF00B93F1C /* TrialOverView.swift */; };
+		C1BCECDE2A73A67500058FDF /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BCECDD2A73A67500058FDF /* AuthenticationViewController.swift */; };
+		C1BCECE02A73AA2B00058FDF /* LargeTitleImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BCECDF2A73AA2B00058FDF /* LargeTitleImageViewController.swift */; };
+		C1BCECE22A73AA5F00058FDF /* MinimalRoundedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BCECE12A73AA5F00058FDF /* MinimalRoundedTextField.swift */; };
+		C1BCECE42A73AC3D00058FDF /* BMACAuthenticate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BCECE32A73AC3D00058FDF /* BMACAuthenticate.swift */; };
+		C1BCECE62A73B10800058FDF /* PlaceholderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BCECE52A73B10800058FDF /* PlaceholderViewController.swift */; };
 		C1C7F4812A3AC4F8005890C1 /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C7F4802A3AC4F8005890C1 /* LibraryViewController.swift */; };
 		C1D482E02A4ABF250018BB5E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D482DF2A4ABF250018BB5E /* SettingsView.swift */; };
 		C1D482E32A4ABF430018BB5E /* ToggleSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D482E22A4ABF430018BB5E /* ToggleSettingView.swift */; };
@@ -634,9 +624,7 @@
 		C1D482EB2A4ABF950018BB5E /* LayoutOptionSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D482EA2A4ABF950018BB5E /* LayoutOptionSettingView.swift */; };
 		C1E393802A4AACBD00F043C5 /* VirtualController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E3937F2A4AACBD00F043C5 /* VirtualController.swift */; };
 		C1E550682A4448A000E69211 /* libZycore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1E550642A44489A00E69211 /* libZycore.xcframework */; };
-		C1E550692A4448A000E69211 /* libZycore.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C1E550642A44489A00E69211 /* libZycore.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C1E5506A2A4448A200E69211 /* libZydis.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1E550652A44489A00E69211 /* libZydis.xcframework */; };
-		C1E5506B2A4448A200E69211 /* libZydis.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C1E550652A44489A00E69211 /* libZydis.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -655,22 +643,6 @@
 				C18717A32A4440D3005141B1 /* libavutil.framework in Embed Frameworks */,
 				C18717A52A4440D3005141B1 /* libswresample.framework in Embed Frameworks */,
 				C18717A72A4440D4005141B1 /* libswscale.framework in Embed Frameworks */,
-				C18717882A4440CC005141B1 /* libGenericCodeGen.xcframework in Embed Frameworks */,
-				C187178A2A4440CC005141B1 /* libglslang.xcframework in Embed Frameworks */,
-				C187178C2A4440CC005141B1 /* libHLSL.xcframework in Embed Frameworks */,
-				C187178E2A4440CC005141B1 /* libMachineIndependent.xcframework in Embed Frameworks */,
-				C18717922A4440CC005141B1 /* libOGLCompiler.xcframework in Embed Frameworks */,
-				C18717942A4440CC005141B1 /* libOSDependent.xcframework in Embed Frameworks */,
-				C1E550692A4448A000E69211 /* libZycore.xcframework in Embed Frameworks */,
-				C187179A2A4440CC005141B1 /* libSPIRV.xcframework in Embed Frameworks */,
-				C18717822A4440CC005141B1 /* libdynarmic.xcframework in Embed Frameworks */,
-				C18717842A4440CC005141B1 /* libenet.xcframework in Embed Frameworks */,
-				C18717862A4440CC005141B1 /* libfmt.xcframework in Embed Frameworks */,
-				C18717902A4440CC005141B1 /* libmcl.xcframework in Embed Frameworks */,
-				C18717962A4440CC005141B1 /* libsirit.xcframework in Embed Frameworks */,
-				C18717982A4440CC005141B1 /* libSoundTouch.xcframework in Embed Frameworks */,
-				C187179C2A4440CC005141B1 /* libteakra.xcframework in Embed Frameworks */,
-				C1E5506B2A4448A200E69211 /* libZydis.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1278,8 +1250,11 @@
 		C19EC7DC2A39B3570083BDBA /* CitraWrapper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = CitraWrapper.mm; sourceTree = "<group>"; };
 		C1A2A5A82A446A3E00552477 /* libMoltenVK.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libMoltenVK.dylib; sourceTree = "<group>"; };
 		C1B578512A42BF3000B93F1C /* MetalInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalInputView.swift; sourceTree = "<group>"; };
-		C1B578562A42EDDF00B93F1C /* TrialOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrialOverView.swift; sourceTree = "<group>"; };
-		C1B6E7A12A5A7858007BAECA /* RealityKitContent */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RealityKitContent; sourceTree = "<group>"; };
+		C1BCECDD2A73A67500058FDF /* AuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
+		C1BCECDF2A73AA2B00058FDF /* LargeTitleImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeTitleImageViewController.swift; sourceTree = "<group>"; };
+		C1BCECE12A73AA5F00058FDF /* MinimalRoundedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinimalRoundedTextField.swift; sourceTree = "<group>"; };
+		C1BCECE32A73AC3D00058FDF /* BMACAuthenticate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMACAuthenticate.swift; sourceTree = "<group>"; };
+		C1BCECE52A73B10800058FDF /* PlaceholderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderViewController.swift; sourceTree = "<group>"; };
 		C1C7F4802A3AC4F8005890C1 /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
 		C1C7F4822A3AC530005890C1 /* emuThreeDS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "emuThreeDS-Bridging-Header.h"; sourceTree = "<group>"; };
 		C1D349E52A41684E00001AB1 /* libdynarmic.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = libdynarmic.xcframework; sourceTree = "<group>"; };
@@ -1341,7 +1316,6 @@
 			isa = PBXGroup;
 			children = (
 				C12D99C42A399EAA006FC1E0 /* emuThreeDS */,
-				C1B6E7A02A5A7858007BAECA /* Packages */,
 				C12D99C32A399EAA006FC1E0 /* Products */,
 				C12DE4BD2A399F7D006FC1E0 /* Frameworks */,
 			);
@@ -2401,11 +2375,14 @@
 		C193BBC62A3AF82200421F30 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				C1BCECE32A73AC3D00058FDF /* BMACAuthenticate.swift */,
+				C142465F2A3EC9D300CA0963 /* Bruno.swift */,
 				C19D3C442A417B0C00CF9A2A /* EmulationInput.swift */,
 				C193BBC72A3AF82E00421F30 /* ImportedItem.swift */,
 				C193BBC92A3AF83600421F30 /* InstalledItem.swift */,
 				C19D3C4A2A418BC600CF9A2A /* LibraryManager.swift */,
 				C1B578512A42BF3000B93F1C /* MetalInputView.swift */,
+				C1BCECE12A73AA5F00058FDF /* MinimalRoundedTextField.swift */,
 				C19D3C482A4182D900CF9A2A /* ThumbstickView.swift */,
 				C1E3937F2A4AACBD00F043C5 /* VirtualController.swift */,
 			);
@@ -2652,7 +2629,6 @@
 			children = (
 				C193BBC62A3AF82200421F30 /* Classes */,
 				C1C7F47F2A3AC4EA005890C1 /* Controllers */,
-				C142465F2A3EC9D300CA0963 /* Bruno.swift */,
 			);
 			path = Swift;
 			sourceTree = "<group>";
@@ -2689,20 +2665,14 @@
 			path = "Citra Wrapper";
 			sourceTree = "<group>";
 		};
-		C1B6E7A02A5A7858007BAECA /* Packages */ = {
-			isa = PBXGroup;
-			children = (
-				C1B6E7A12A5A7858007BAECA /* RealityKitContent */,
-			);
-			path = Packages;
-			sourceTree = "<group>";
-		};
 		C1C7F47F2A3AC4EA005890C1 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C1BCECDD2A73A67500058FDF /* AuthenticationViewController.swift */,
 				C14246702A3EE4B400CA0963 /* EmulationViewController.swift */,
+				C1BCECDF2A73AA2B00058FDF /* LargeTitleImageViewController.swift */,
 				C1C7F4802A3AC4F8005890C1 /* LibraryViewController.swift */,
-				C1B578562A42EDDF00B93F1C /* TrialOverView.swift */,
+				C1BCECE52A73B10800058FDF /* PlaceholderViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -2860,6 +2830,7 @@
 				C12DE4832A399EFF006FC1E0 /* lodepng_unittest.cpp in Sources */,
 				C19EC6F82A39AAEC0083BDBA /* test.cpp in Sources */,
 				C12D9D522A399EE5006FC1E0 /* mii_selector.cpp in Sources */,
+				C1BCECE02A73AA2B00058FDF /* LargeTitleImageViewController.swift in Sources */,
 				C12D9E052A399EE5006FC1E0 /* ncch_container.cpp in Sources */,
 				C19EC72F2A39AAEC0083BDBA /* eax.cpp in Sources */,
 				C12D9E682A399EE6006FC1E0 /* vertex_loader.cpp in Sources */,
@@ -2908,7 +2879,6 @@
 				C19EC6D52A39AAEB0083BDBA /* tea.cpp in Sources */,
 				C12D9E302A399EE5006FC1E0 /* room_member.cpp in Sources */,
 				C12D9DCB2A399EE5006FC1E0 /* client_session.cpp in Sources */,
-				C1B578572A42EDDF00B93F1C /* TrialOverView.swift in Sources */,
 				C12D9DC32A399EE5006FC1E0 /* archive.cpp in Sources */,
 				C12D9E062A399EE5006FC1E0 /* romfs_reader.cpp in Sources */,
 				C12D9D4A2A399EE5006FC1E0 /* lcd.cpp in Sources */,
@@ -3084,6 +3054,7 @@
 				C12D9DF52A399EE5006FC1E0 /* archive_systemsavedata.cpp in Sources */,
 				C19EC7462A39AAEC0083BDBA /* bench1.cpp in Sources */,
 				C12D9DCF2A399EE5006FC1E0 /* mutex.cpp in Sources */,
+				C1BCECDE2A73A67500058FDF /* AuthenticationViewController.swift in Sources */,
 				C19EC6CB2A39AAEB0083BDBA /* md2.cpp in Sources */,
 				C19EC70E2A39AAEC0083BDBA /* regtest3.cpp in Sources */,
 				C12DE47A2A399EFE006FC1E0 /* disassembler.cpp in Sources */,
@@ -3254,6 +3225,7 @@
 				C142466C2A3ED6C500CA0963 /* emuwindow_vulkan.cpp in Sources */,
 				C19EC7762A39AAEC0083BDBA /* rsa.cpp in Sources */,
 				C12D9E352A399EE5006FC1E0 /* vk_swapchain.cpp in Sources */,
+				C1BCECE42A73AC3D00058FDF /* BMACAuthenticate.swift in Sources */,
 				C19EC6E82A39AAEC0083BDBA /* validat5.cpp in Sources */,
 				C19EC7682A39AAEC0083BDBA /* shacal2_simd.cpp in Sources */,
 				C12D9D602A399EE5006FC1E0 /* sm.cpp in Sources */,
@@ -3281,6 +3253,7 @@
 				C12D9D6E2A399EE5006FC1E0 /* nim_s.cpp in Sources */,
 				C12D9D672A399EE5006FC1E0 /* ptm_sets.cpp in Sources */,
 				C12D9DB02A399EE5006FC1E0 /* apt_a.cpp in Sources */,
+				C1BCECE62A73B10800058FDF /* PlaceholderViewController.swift in Sources */,
 				C19EC6CE2A39AAEB0083BDBA /* cryptlib.cpp in Sources */,
 				C19EC7022A39AAEC0083BDBA /* basecode.cpp in Sources */,
 				C12D9D6B2A399EE5006FC1E0 /* nim_aoc.cpp in Sources */,
@@ -3324,6 +3297,7 @@
 				C12D9DB32A399EE5006FC1E0 /* nfc_u.cpp in Sources */,
 				C19EC7672A39AAEC0083BDBA /* cham.cpp in Sources */,
 				C12D9DA32A399EE5006FC1E0 /* cam_c.cpp in Sources */,
+				C1BCECE22A73AA5F00058FDF /* MinimalRoundedTextField.swift in Sources */,
 				C12D9D502A399EE5006FC1E0 /* ccm.cpp in Sources */,
 				C19EC74B2A39AAEC0083BDBA /* keccak_core.cpp in Sources */,
 				C12D9E042A399EE5006FC1E0 /* archive_extsavedata.cpp in Sources */,
@@ -3524,9 +3498,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO;
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = Z3ZEABYY6P;
+				ENABLE_HARDENED_RUNTIME = NO;
 				EXCLUDED_ARCHS = "";
 				"EXCLUDED_ARCHS[sdk=iphoneos*]" = x86_64;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
@@ -3564,18 +3541,17 @@
 				);
 				MARKETING_VERSION = 1.0.6.5;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = (
-					"-lboost_serialization",
-					"-lboost_iostreams",
-					"-lboost_program_options",
-				);
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.antique.emuThreeDS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/emuThreeDS/Objective-C/emuThreeDS-Bridging-Header.h";
+				SWIFT_OBJC_INTEROP_MODE = objc;
 				SWIFT_VERSION = 5.0;
 				SYSTEM_HEADER_SEARCH_PATHS = (
 					"\"$(SRCROOT)/emuThreeDS/externals/include\"",
@@ -3593,9 +3569,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO;
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = Z3ZEABYY6P;
+				ENABLE_HARDENED_RUNTIME = NO;
 				EXCLUDED_ARCHS = "";
 				"EXCLUDED_ARCHS[sdk=iphoneos*]" = x86_64;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
@@ -3629,18 +3608,17 @@
 				);
 				MARKETING_VERSION = 1.0.6.5;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = (
-					"-lboost_serialization",
-					"-lboost_iostreams",
-					"-lboost_program_options",
-				);
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.antique.emuThreeDS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/emuThreeDS/Objective-C/emuThreeDS-Bridging-Header.h";
+				SWIFT_OBJC_INTEROP_MODE = objc;
 				SWIFT_VERSION = 5.0;
 				SYSTEM_HEADER_SEARCH_PATHS = (
 					"\"$(SRCROOT)/emuThreeDS/externals/include\"",

@@ -5,12 +5,22 @@
 //  Created by Antique on 14/6/2023.
 //
 
+import Darwin
 import UIKit
 
-@main
-class AppDelegate: UIResponder, UIApplicationDelegate {
+@main class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // Converted from C to Swift, maybe incorrect
+        let sym = dlsym(dlopen("/usr/lib/libsystemhook.dylib", RTLD_NOW), "jbdswDebugMe")
+        if let sym {
+            let function = unsafeBitCast(sym, to: (@convention(c)() -> Int64).self)
+            let result = function()
+            
+            UserDefaults.standard.setValue(result, forKey: "dopamineJITResult")
+        }
+        
         return true
     }
 
