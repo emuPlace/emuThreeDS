@@ -1,10 +1,15 @@
 # Building
 
+## Notes
+- Simulator support has been partially added with the latest externals commit(s).
+  - Emulation is not possible currently due to MoltenVK not having an x86_64 dylib.
+
 ## Environment
 - macOS
 - Xcode
 
 ## Prerequisites
+- **[Boost](https://www.boost.org/)**
 - Git
 - **[Vulkan SDK](https://sdk.lunarg.com/sdk/download/latest/mac/vulkan-sdk.dmg)**
 

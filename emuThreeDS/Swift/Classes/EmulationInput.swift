@@ -2,12 +2,12 @@
 //  EmulationInput.swift
 //  emuThreeDS
 //
-//  Created by Antique on 27/5/2023.
+//  Created by Antique on 20/6/2023.
 //
 
 import Foundation
 
-@objc class EmulationInput: NSObject {
+@objc class EmulationInput : NSObject {
     @objc static let buttonA = ButtonInputBridge()
     @objc static let buttonB = ButtonInputBridge()
     @objc static let buttonX = ButtonInputBridge()
@@ -22,8 +22,10 @@ import Foundation
     @objc static let dpadDown = ButtonInputBridge()
     @objc static let dpadLeft = ButtonInputBridge()
     @objc static let dpadRight = ButtonInputBridge()
-    @objc static let _buttonDummy = ButtonInputBridge()
     
-    @objc static let circlePad = AnalogInputBridge()
-    @objc static let circlePadPro = AnalogInputBridge()
+    @objc static let leftThumbstick = AnalogInputBridge()
+    @objc static let rightThumstick = AnalogInputBridge()
+    
+    
+    @objc static let _dummy = ButtonInputBridge()
 }

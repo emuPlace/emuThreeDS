@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C15DC0C62A1B40C00053B8EA"
+               BlueprintIdentifier = "C12D99C12A399EAA006FC1E0"
                BuildableName = "emuThreeDS.app"
                BlueprintName = "emuThreeDS"
                ReferencedContainer = "container:emuThreeDS.xcodeproj">
@@ -45,7 +45,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C15DC0C62A1B40C00053B8EA"
+            BlueprintIdentifier = "C12D99C12A399EAA006FC1E0"
             BuildableName = "emuThreeDS.app"
             BlueprintName = "emuThreeDS"
             ReferencedContainer = "container:emuThreeDS.xcodeproj">
@@ -62,7 +62,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C15DC0C62A1B40C00053B8EA"
+            BlueprintIdentifier = "C12D99C12A399EAA006FC1E0"
             BuildableName = "emuThreeDS.app"
             BlueprintName = "emuThreeDS"
             ReferencedContainer = "container:emuThreeDS.xcodeproj">

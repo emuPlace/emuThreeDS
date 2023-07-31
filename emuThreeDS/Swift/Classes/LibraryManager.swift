@@ -2,7 +2,7 @@
 //  LibraryManager.swift
 //  emuThreeDS
 //
-//  Created by Antique on 25/5/2023.
+//  Created by Antique on 20/6/2023.
 //
 
 import Accelerate
@@ -11,11 +11,27 @@ import UIKit
 
 class LibraryManager {
     static let shared = LibraryManager()
-    let wrapper = CitraWrapper.sharedInstance()
+    let citraWrapper = CitraWrapper.shared()
     
-    func getLibrary() -> [Initial : [Rom]]? {
+    
+    func getImportedItemGameInformation(for path: String) -> (String, String, String, String, String) {
+        let formatter = ByteCountFormatter()
+        formatter.allowedUnits = [.useGB, .useMB, .useKB]
+        formatter.countStyle = .file
+        
+        var size: Int64 = 0
+        do {
+            size = try FileManager.default.attributesOfItem(atPath: path)[.size] as? Int64 ?? 0
+        } catch { print(error.localizedDescription) }
+        
+        
+        return (path, citraWrapper.getPublisher(path: path), citraWrapper.getRegion(path: path), formatter.string(fromByteCount: size), citraWrapper.getTitle(path: path))
+    }
+    
+    
+    func getLibrary() -> [InstalledItem] {
         guard let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
-            return nil
+            return []
         }
         
         let directory = documentsDirectory.appendingPathComponent("roms", conformingTo: .directory)
@@ -24,48 +40,26 @@ class LibraryManager {
                 try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: false)
             } catch {
                 print(error.localizedDescription)
-                return nil
+                return []
             }
         }
         
         do {
-            let contents = try FileManager.default.contentsOfDirectory(atPath: directory.path).filter { $0.hasSuffix(".3ds") || $0.hasSuffix(".cci") || $0.hasSuffix(".cia") }
+            let contents = try FileManager.default.contentsOfDirectory(atPath: directory.path).filter { $0.hasSuffix(".3ds") || $0.hasSuffix(".cci") || $0.hasSuffix(".cxi") }
             if contents.count == 0 {
-                return nil
+                return []
             }
             
-            return contents.reduce(into: [Initial : [Rom]]()) { partialResult, file in
+            return contents.reduce(into: [InstalledItem]()) { partialResult, file in
                 let path = directory.appendingPathComponent(file, conformingTo: .fileURL).path
                 
-                let byteCountFormatter = ByteCountFormatStyle(style: .file, allowedUnits: [.mb, .gb])
-                var size = "0 MB"
-                do {
-                    let attributes = try FileManager.default.attributesOfItem(atPath: path)
-                    size = byteCountFormatter.format(attributes[.size] as? Int64 ?? 0)
-                } catch {
-                    print(error.localizedDescription)
-                }
+                let rom = InstalledItem(gameInfo: self.getImportedItemGameInformation(for: path))
                 
-                
-                let publisher = wrapper.getPublisher(path)
-                let region = wrapper.getRegion(path)
-                let title = wrapper.getTitle(path).replacingOccurrences(of: "\n", with: " ") // some games have newlines...
-                
-                let initial = Initial(character: String(title.first?.uppercased() ?? ""))
-                let rom = Rom(publisher: publisher, regions: region, size: size, title: title, path: path)
-                partialResult[initial] == nil ? partialResult[initial] = [rom] : partialResult[initial]!.append(rom)
+                partialResult.append(rom)
             }
         } catch {
             print(error.localizedDescription)
-            return nil
+            return []
         }
-    }
-    
-    func initials(from library: [Initial : [Rom]]) -> [Initial] {
-        return library.keys.reduce(into: [Initial](), { $0.append($1) }).sorted()
-    }
-    
-    func roms(for initial: Initial, using library: [Initial : [Rom]]) -> [Rom] {
-        return library[initial]!.reduce(into: [Rom](), { $0.append($1) }).sorted() // not recommended but checks exist
     }
 }
